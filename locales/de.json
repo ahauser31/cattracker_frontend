@@ -1,0 +1,21 @@
+{
+    "Home": {
+        "caption": "Sammy-Monitor",
+        "today": "Heute",
+        "mon": "Mon",
+        "tue": "Die",
+        "wed": "Mit",
+        "thu": "Don",
+        "fri": "Fre",
+        "sat": "Sam",
+        "sun": "Son",
+        "monday": "Montag",
+        "tuesday": "Dienstag",
+        "wednesday": "Mittwoch",
+        "thursday": "Donnerstag",
+        "friday": "Freitag",
+        "saturday": "Samstag",
+        "sunday": "Sonntag",
+        "past7": "Vergangene 7 Tage"
+    }
+}
