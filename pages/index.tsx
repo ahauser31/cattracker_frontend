@@ -7,10 +7,17 @@ import { Dropdown } from '../components/Dropdown'
 import { ArrowLeftOnRectangleIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { Timeline } from '../components/Timeline'
 
 const nunito = Nunito({
   weight: '400',
 })
+
+let demoArray: SessionArray
+demoArray = [
+    { "index": 232, "startTime": new Date("2022-11-16T09:13:20"), "endTime": new Date("2022-11-16T11:34:40"), "ongoing": false },
+    { "index": 234, "startTime": new Date("2022-11-16T17:20:20"), "endTime": new Date("2022-11-16T18:30:40"), "ongoing": false }
+]
 
 const Home: NextPage = () => {
   const { user, error, isLoading } = useUser();
@@ -66,109 +73,23 @@ const Home: NextPage = () => {
         {// <div className="flex h-screen bg-cover bg-top bg-[url('/background.jpg')]">
         }
 
-        <div className="h-screen flex items-center justify-center place-items-center">
-          <div className="container bg-slate-800 bg-opacity-75 p-2 md:p-5">
+        <div className="h-screen flex items-center justify-center place-items-center z-10">
+          <div className="container bg-slate-800 bg-opacity-75 p-2 md:p-5 mt-[80px] mb-5">
             <div className="text-white">
               <p>{t('today')}</p>
             </div>
 
-            <table className="auto timeline w-full">
-              <tbody>
-                <tr>
-                  <td className="pr-2 md:pr-3 text-right">Mon</td>
-
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full z-0 relative">
-                      <div className="bg-indigo-700 w-full h-6 z-1 absolute top-1/2 transform -translate-y-1/2">
-                      </div>
-                    </div>
-                    
-                  </td>
-
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full">
-                      <div className="w-full relative flex justify-end">
-                        <div className="bg-indigo-700 w-1/5 h-6 z-1 absolute top-1/2 transform -translate-y-1/2 rounded-r-lg"></div>
-                      </div>
-                      <div className="w-full relative flex justify-start">
-                        <div className="bg-indigo-700 w-1/5 h-6 z-1 absolute top-1/2 transform -translate-y-1/2 rounded-l-lg"></div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full">
-                      <div className="w-full relative flex justify-end">
-                        <div className="bg-indigo-700 w-1/5 h-6 z-1 absolute top-1/2 transform -translate-y-1/2 rounded-r-lg"></div>
-                      </div>
-                      
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-                  <td className="slot">
-                    <div className="bg-gray-200 h-0.5 w-full relative">
-                    </div>
-                  </td>
-
-                  <td className="pl-2 md:pl-3 text-left">Tue</td>
-                </tr>
-
-                <tr>
-                  <td className="pr-2 md:pr-3 text-right"></td>
-                  
-                  <td className="md:pr-2 md:pl-2 text-center">00</td>
-                  <td className="md:pr-2 md:pl-2 text-center">02</td>
-                  <td className="md:pr-2 md:pl-2 text-center">04</td>
-                  <td className="md:pr-2 md:pl-2 text-center">06</td>
-                  <td className="md:pr-2 md:pl-2 text-center">08</td>
-                  <td className="md:pr-2 md:pl-2 text-center">10</td>
-                  <td className="md:pr-2 md:pl-2 text-center">12</td>
-                  <td className="md:pr-2 md:pl-2 text-center">14</td>
-                  <td className="md:pr-2 md:pl-2 text-center">16</td>
-                  <td className="md:pr-2 md:pl-2 text-center">18</td>
-                  <td className="md:pr-2 md:pl-2 text-center">20</td>
-                  <td className="md:pr-2 md:pl-2 text-center">22</td>
-                  <td className="md:pr-2 md:pl-2 text-center">24</td>
-                  
-                  <td className="pl-2 md:pl-3 text-left"></td>
-                </tr>
-              </tbody>
-            </table>
+            <Timeline currentTime={new Date("2022-11-16T11:01:01")} sessions={demoArray} showTime={true} textColor="text-white" barColor="bg-sky-700" lineColor="bg-gray-300" curTimeColor="bg-teal-500" showCurrentTime={true}></Timeline>
+            <div className="mt-8 mb-6 text-white">
+              <p>{t('past6')}</p>
+            </div>
+            <Timeline currentTime={new Date("2022-11-15T11:01:01")} sessions={demoArray} showTime={false} textColor="text-white" barColor="bg-sky-700" lineColor="bg-gray-300" curTimeColor="bg-teal-500" showCurrentTime={false}></Timeline>
+            <Timeline currentTime={new Date("2022-11-14T11:01:01")} sessions={demoArray} showTime={false} textColor="text-white" barColor="bg-sky-700" lineColor="bg-gray-300" curTimeColor="bg-teal-500" showCurrentTime={false}></Timeline>
+            <Timeline currentTime={new Date("2022-11-13T11:01:01")} sessions={demoArray} showTime={false} textColor="text-white" barColor="bg-sky-700" lineColor="bg-gray-300" curTimeColor="bg-teal-500" showCurrentTime={false}></Timeline>
+            <Timeline currentTime={new Date("2022-11-12T11:01:01")} sessions={demoArray} showTime={false} textColor="text-white" barColor="bg-sky-700" lineColor="bg-gray-300" curTimeColor="bg-teal-500" showCurrentTime={false}></Timeline>
+            <Timeline currentTime={new Date("2022-11-11T11:01:01")} sessions={demoArray} showTime={false} textColor="text-white" barColor="bg-sky-700" lineColor="bg-gray-300" curTimeColor="bg-teal-500" showCurrentTime={false}></Timeline>
+            <Timeline currentTime={new Date("2022-11-10T11:01:01")} sessions={demoArray} showTime={true} textColor="text-white" barColor="bg-sky-700" lineColor="bg-gray-300" curTimeColor="bg-teal-500" showCurrentTime={false}></Timeline>
+            
           </div>
         </div>
       </div>

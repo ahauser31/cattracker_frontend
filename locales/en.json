@@ -16,6 +16,15 @@
         "friday": "Friday",
         "saturday": "Saturday",
         "sunday": "Sunday",
-        "past7": "Past 7 days"
+        "past6": "Past 6 days"
+    },
+    "Timeline": {
+        "d0": "Sun",
+        "d1": "Mon",
+        "d2": "Tue",
+        "d3": "Wed",
+        "d4": "Thu",
+        "d5": "Fri",
+        "d6": "Sat"
     }
 }

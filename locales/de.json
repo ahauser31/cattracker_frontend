@@ -16,6 +16,15 @@
         "friday": "Freitag",
         "saturday": "Samstag",
         "sunday": "Sonntag",
-        "past7": "Vergangene 7 Tage"
+        "past6": "Vergangene 6 Tage"
+    },
+    "Timeline": {
+        "d0": "Son",
+        "d1": "Mon",
+        "d2": "Die",
+        "d3": "Mit",
+        "d4": "Don",
+        "d5": "Fre",
+        "d6": "Sam"
     }
 }
